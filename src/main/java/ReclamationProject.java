@@ -8,19 +8,46 @@
  * 5. Remove unnecessary comments as appropriate
  */
 
-public class ReclamationProject
-{
-    static String doit(String a,String b){
-        if (a.length() > b.length()){
-            String c = a; // TODO: set c to a
-            a=b; b=c;}
-        String r = (a.equals(b)) ? "" : ""; // I love the ternary operator!
+/**
+ * Class for Reclamation Project.
+ */
+public class ReclamationProject {
+
+    /**
+     * This method returns a a string and is of type static.
+     * @param a First string parameter in method which is used for manipulation.
+     * @param b Second string parameter in method which is used for manipulation.
+     * @return String
+     */
+    static String doit(final String a, final String b) {
+
+        String newA = a;
+        String newB = b;
+
+        if (newA.length() > newB.length()) {
+            String c = newA;
+
+            newA = newB;
+            newB = c;
+     }
+
+        String r;
+
+        if (newA.equals(newB)) {
+            r = "";
+        } else {
+            r = "";
+        }
         /*
-         * For loop with i
+         * For loop with i which goes through the length of the string and each character
          */
-        for (int i = 0; i < a.length(); i++) { for (int j = a.length() - i; j > 0; j--) {
-                for (int k = 0; k < b.length()- j; k++) {
-                    r = (a.regionMatches(i, b, k, j) && j >r.length()) ? a.substring(i,i + j) : r; // Do it!
-                        }} // Ah yeah
+        for (int i = 0; i < newA.length(); i++) {
+            for (int j = newA.length() - i; j > 0; j--) {
+                for (int k = 0; k < newB.length() - j; k++) {
+                    if (newA.regionMatches(i, newB, k, j) && j > r.length()) {
+                        r = newA.substring(i, i + j);
+                    }
+               }
+            }
         } return r; }
 }
